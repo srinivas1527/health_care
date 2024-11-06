@@ -1,0 +1,132 @@
+/* Logo */
+.logo {
+  @apply h-24 p-6 transition-all duration-300;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo.react {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  @apply relative h-[600px] bg-gradient-to-r from-blue-900/70 to-green-900/50;
+}
+
+.hero-content {
+  @apply relative z-10 text-white max-w-3xl mx-auto text-center pt-32;
+}
+
+/* Services Grid */
+.services-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.service-card {
+  @apply p-6 transition-all duration-200 transform hover:scale-105;
+}
+
+/* Testimonials */
+.testimonial-card {
+  @apply p-8 text-center;
+}
+
+.testimonial-image {
+  @apply w-20 h-20 rounded-full mx-auto mb-4 object-cover;
+}
+
+/* Doctor Cards */
+.doctor-card {
+  @apply p-6 transition-all duration-200 transform hover:scale-105;
+}
+
+.doctor-image {
+  @apply w-full h-64 object-cover;
+}
+
+/* Forms */
+.form-container {
+  @apply p-8 max-w-2xl mx-auto;
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block text-gray-700 mb-2 font-medium;
+}
+
+/* Responsive Navigation */
+.mobile-menu {
+  @apply md:hidden fixed inset-0 bg-white z-50 transform transition-transform duration-200;
+}
+
+.mobile-menu.open {
+  @apply translate-x-0;
+}
+
+.mobile-menu.closed {
+  @apply translate-x-full;
+}
+
+/* Footer */
+.footer {
+  @apply bg-gray-800 text-white py-12;
+}
+
+.footer-grid {
+  @apply grid grid-cols-1 md:grid-cols-4 gap-8;
+}
+
+/* Animations */
+.fade-in {
+  @apply opacity-0 animate-[fadeIn_0.5s_ease-in_forwards];
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2563eb;
+}
