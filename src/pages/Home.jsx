@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'; // Ensure Link is imported
 import TestimonialSlider from '../components/TestimonialSlider';
 import AppointmentForm from '../components/AppointmentForm';
 
@@ -18,10 +19,14 @@ function Home() {
         <div className="relative max-w-7xl mx-auto px-4 h-full flex items-center">
           <div className="text-white">
             <h1 className="text-5xl font-bold mb-4">Your Health, Our Priority</h1>
-            <p className="text-xl mb-8">Experience world-class healthcare with our team of experts</p>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full">
-              Book an Appointment
-            </button>
+            <p className="text-xl mb-8">
+              Experience world-class healthcare with our team of experts
+            </p>
+            <Link to="/appointments">
+              <button className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                Book an Appointment
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -32,8 +37,15 @@ function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service) => (
-              <div key={service.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow">
-                <img src={service.src} alt={service.title} className="w-full h-48 object-cover mb-4" />
+              <div
+                key={service.id}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src={service.src}
+                  alt={service.title}
+                  className="w-full h-48 object-cover mb-4"
+                />
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
               </div>
@@ -61,20 +73,20 @@ const services = [
     id: 1,
     title: "Primary Care",
     description: "Comprehensive healthcare services for all your basic medical needs.",
-    src: "https://tse1.mm.bing.net/th?id=OIP.Kn11SajdfYZOYgRqmPEZiQHaE8&pid=Api&P=0&h=220"
+    src: "https://tse1.mm.bing.net/th?id=OIP.Kn11SajdfYZOYgRqmPEZiQHaE8&pid=Api&P=0&h=220",
   },
   {
     id: 2,
     title: "Specialized Treatment",
     description: "Expert care in various medical specialties.",
-    src: "https://tse4.mm.bing.net/th?id=OIP.F_Hc1nqboLGclQ76mT2bdQHaE8&pid=Api&P=0&h=220"
+    src: "https://tse4.mm.bing.net/th?id=OIP.F_Hc1nqboLGclQ76mT2bdQHaE8&pid=Api&P=0&h=220",
   },
   {
     id: 3,
     title: "Emergency Care",
     description: "24/7 emergency medical services when you need them most.",
-    src: "https://tse3.mm.bing.net/th?id=OIP._CkpMrxELlphvKUu7_doWgHaE7&pid=Api&P=0&h=220"
-  }
+    src: "https://tse3.mm.bing.net/th?id=OIP._CkpMrxELlphvKUu7_doWgHaE7&pid=Api&P=0&h=220",
+  },
 ];
 
 export default Home;

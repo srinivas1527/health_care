@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom'; // Ensure you import Link from react-router-dom
 
 function Doctors() {
   const doctors = [
@@ -92,12 +93,13 @@ function Doctors() {
                     <p><strong>Education:</strong> {selectedDoctor.education}</p>
                     <p><strong>Experience:</strong> {selectedDoctor.experience}</p>
                   </div>
-                  <button
-                    onClick={() => window.location.href = '/appointments'}
-                    className="mt-6 bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 transition-colors"
-                  >
-                    Book Appointment
-                  </button>
+                  <Link to="/appointments">
+                    <button
+                      className="mt-4 w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+                    >
+                      Book Appointment
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
